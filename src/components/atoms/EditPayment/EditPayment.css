@@ -1,0 +1,32 @@
+.btnEdit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btnEdit:hover {
+  color: #fff;
+  background-color: #5c636a;
+  border-color: #5c636a;
+}
+
+.btnEdit:focus {
+  box-shadow: 130, 138, 145;
+}
+
+.btnEdit:active {
+  color: #fff;
+  background-color: #565e64;
+  border-color: #51585e;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.imgEdit {
+  width: 2.5rem;
+  height: 2.5rem;
+}

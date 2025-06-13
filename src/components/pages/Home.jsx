@@ -1,14 +1,14 @@
-import { HomeHeader } from "../organisms/HomeHeader"
+import { HomeHeader } from "../organisms/HomeHeader";
 
-import "./Home.css"
+import "./Home.css";
 
 export const Home = () => {
-    return (
-        <>
-            <HomeHeader />
-            <main>
-                <h1>¡Welcome to LaPlata!</h1>
-            </main>
-        </>
-    )
-}
+  return (
+    <>
+      <HomeHeader />
+      <main>
+        <h1>¡Welcome to LaPlata!</h1>
+      </main>
+    </>
+  );
+};
