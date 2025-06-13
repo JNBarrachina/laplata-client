@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
+import { Payment } from "../molecules/Payment/Payment";
 
 export const Home = () => {
-    return (
-        <div>Home</div>
-    )
-}
+  return <Payment />;
+};
