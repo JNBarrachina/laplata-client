@@ -1,4 +1,4 @@
-import { HomeHeader } from "../organisms/HomeHeader";
+import { HomeHeader } from "../../organisms/HomeHeader/HomeHeader";
 
 import "./Home.css";
 

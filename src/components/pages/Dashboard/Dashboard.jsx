@@ -1,4 +1,4 @@
-import { PaymentsContainer } from "../organisms/PaymentsContainer/PaymentsContainer";
+import { PaymentsContainer } from "../../organisms/PaymentsContainer/PaymentsContainer";
 
 export const Dashboard = () => {
   return (
