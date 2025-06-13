@@ -1,9 +1,12 @@
+import { DashboardHeader } from "../../organisms/DashboardHeader/DashboardHeader";
 import { PaymentsContainer } from "../../organisms/PaymentsContainer/PaymentsContainer";
 
 export const Dashboard = () => {
   return (
-    <div>
+
+    <main className="dashboardMain">
+      <DashboardHeader />
       <PaymentsContainer />
-    </div>
+    </main>
   );
 };
