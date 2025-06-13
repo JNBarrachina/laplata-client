@@ -1,0 +1,27 @@
+.paymentContainer {
+  display: flex;
+  min-width: 33rem;
+  padding: 0.8rem;
+  justify-content: space-between;
+  align-items: center;
+  border-color: whitesmoke;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  gap: 3.7rem;
+}
+
+.paymentDate {
+  font-size: 21px;
+  color: grey;
+  font-weight: bold;
+}
+
+.paymentText {
+  font-size: 19px;
+  color: black;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 0.7rem;
+}

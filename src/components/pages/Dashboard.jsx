@@ -1,7 +1,9 @@
-import React from 'react'
+import { PaymentsContainer } from "../organisms/PaymentsContainer/PaymentsContainer";
 
 export const Dashboard = () => {
-    return (
-        <div>Dashboard</div>
-    )
-}
+  return (
+    <div>
+      <PaymentsContainer />
+    </div>
+  );
+};
