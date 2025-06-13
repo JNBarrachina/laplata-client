@@ -3,6 +3,7 @@ import { PaymentsContainer } from "../../organisms/PaymentsContainer/PaymentsCon
 
 export const Dashboard = () => {
   return (
+
     <main className="dashboardMain">
       <DashboardHeader />
       <PaymentsContainer />
