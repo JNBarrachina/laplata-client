@@ -1,0 +1,8 @@
+.paymentsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.6rem;
+  background-color: lightgray;
+  border-radius: 8px;
+}
