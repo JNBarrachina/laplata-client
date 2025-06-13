@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 
-import { Home } from "./components/pages/Home";
-import { Login } from "./components/pages/Login";
-import { Register } from "./components/pages/Register";
-import { Dashboard } from "./components/pages/Dashboard";
-import { NotFound } from "./components/pages/NotFound";
+import { Home } from "./components/pages/Home/Home";
+import { Login } from "./components/pages/LoginRegister/Login";
+import { Register } from "./components/pages/LoginRegister/Register";
+import { Dashboard } from "./components/pages/Dashboard/Dashboard";
+import { NotFound } from "./components/pages/NotFound/NotFound";
 
 function App() {
   return (
