@@ -1,7 +1,14 @@
-import React from 'react'
+import { HomeHeader } from "../organisms/HomeHeader"
+
+import "./Home.css"
 
 export const Home = () => {
     return (
-        <div>Home</div>
+        <>
+            <HomeHeader />
+            <main>
+                <h1>¡Welcome to LaPlata!</h1>
+            </main>
+        </>
     )
 }
