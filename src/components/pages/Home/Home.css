@@ -1,10 +1,10 @@
-main {
+.homeMain {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 
-    background-image: url('../../assets/homebackground.jpg');
+    background-image: url('../../../assets/homebackground.jpg');
     background-size: cover;
     background-position: center;
 

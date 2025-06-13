@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router";
 
 import "./LoginRegister.css"
-import { HomeHeader } from "../organisms/HomeHeader"
+import { HomeHeader } from "../../organisms/HomeHeader/HomeHeader"
 
 export const Login = () => {
     const navigate = useNavigate()
