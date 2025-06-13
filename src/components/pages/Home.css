@@ -1,0 +1,19 @@
+main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('../../assets/homebackground.jpg');
+    background-size: cover;
+    background-position: center;
+
+    height: 100vh
+}
+
+h1{
+    color: #254D70;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 4rem;
+}
