@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+*:focus{
+  outline: 6px solid orange;
+}
+
 body {
   width: 100%;
   
@@ -47,11 +51,5 @@ button {
 button:hover {
   border-color: #254D70;
 }
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 
 

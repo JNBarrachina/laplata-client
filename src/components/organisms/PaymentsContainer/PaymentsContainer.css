@@ -3,7 +3,11 @@
   flex-flow: column nowrap;
 
   width: 100%;
+  overflow: auto;
 
   gap: 0.6rem;
   padding: 0.6rem;
+
+  background-color: whitesmoke;
+  border: 1px solid #254D70;
 }

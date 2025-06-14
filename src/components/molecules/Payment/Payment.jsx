@@ -3,16 +3,27 @@ import "./Payment.css";
 import { EditPayment } from "../../atoms/EditPayment/EditPayment";
 import { RemovePayment } from "../../atoms/RemovePayment/RemovePayment";
 
-export const Payment = () => {
+export const Payment = ({ payment }) => {
+  console.log(payment);
+
   return (
-    <section className="paymentContainer">
-      <h3 className="paymentText">Concepto</h3>
-      <p className="paymentText">Coste</p>
-      <p className="paymentDate">13/06/2025</p>
-      <div className="btnContainer">
-        <EditPayment />
-        <RemovePayment />
-      </div>
-    </section>
+    <article className="paymentContainer">
+      <details className="paymentDetailsContainer">
+        <summary className="paymentSummary">
+          <h4 className="paymentTitle">{payment.title}</h4>
+          <p className={payment.type === "expense" ? "payAmount negativeNum" : "payAmount positiveNum"}>
+            {payment.amount}€
+          </p>
+          <p className="paymentDate">{payment.date}</p>
+          <div className="btnContainer">
+            <EditPayment />
+            <RemovePayment />
+          </div>
+        </summary>
+        <div className="paymentDetails">
+          <p className="paymentDescription">{payment.description}</p>
+        </div>
+      </details>
+    </article>
   );
 };
