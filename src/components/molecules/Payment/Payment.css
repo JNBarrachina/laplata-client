@@ -1,25 +1,18 @@
 .paymentContainer {
   display: flex;
-  min-width: 33rem;
-  padding: 0.8rem;
   justify-content: space-between;
   align-items: center;
-  border-color: whitesmoke;
+
+  padding: 0.2rem;
+  
   background-color: whitesmoke;
+  border-color: whitesmoke;
   border-radius: 8px;
-  gap: 3.7rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 .paymentDate {
-  font-size: 21px;
   color: grey;
-  font-weight: bold;
-}
-
-.paymentText {
-  font-size: 19px;
-  color: black;
+  font-weight: bolder;
 }
 
 .btnContainer {

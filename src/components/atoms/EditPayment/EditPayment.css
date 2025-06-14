@@ -1,9 +1,5 @@
-.btnEdit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
+
+.btnEdit {  
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
@@ -26,7 +22,4 @@
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
-.imgEdit {
-  width: 2.5rem;
-  height: 2.5rem;
-}
+

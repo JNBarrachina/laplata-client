@@ -2,8 +2,8 @@ import "./EditPayment.css";
 
 export const EditPayment = () => {
   return (
-    <button className="btnEdit">
-      <img className="imgEdit" src="/src/assets/edit.svg" alt="Edit" />
+    <button className="paymentBtn btnEdit">
+      <img className="paymentImg imgEdit" src="/src/assets/edit.svg" alt="Edit" />
     </button>
   );
 };
