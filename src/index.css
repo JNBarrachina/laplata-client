@@ -3,7 +3,18 @@
   box-sizing: border-box;
 }
 
+body {
+  width: 100%;
+  
+  background-color: whitesmoke;
+}
+
 #root{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+
   width: 100%;
 }
 
@@ -18,26 +29,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  display: flex;
-
-  background-color: whitesmoke;
-}
 
 button {
-  border-radius: 8px;
   border: 1px solid transparent;
+  border-radius: 8px;
+
   padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+
+  font-size: 1rem;
+  font-weight: bold;
   font-family: inherit;
-  background-color: #1a1a1a;
+  
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: #254D70;
 }
 
 button:focus,

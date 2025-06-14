@@ -2,8 +2,8 @@ import "./RemovePayment.css";
 
 export const RemovePayment = () => {
   return (
-    <button className="btnDelete">
-      <img className="imgDelete" src="/src/assets/delete.svg" alt="Delete" />
+    <button className="paymentBtn btnDelete">
+      <img className="paymentImg imgDelete" src="/src/assets/delete.svg" alt="Delete" />
     </button>
   );
 };

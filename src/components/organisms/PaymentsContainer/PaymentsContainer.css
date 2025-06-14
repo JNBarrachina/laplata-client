@@ -1,6 +1,9 @@
 .paymentsContainer {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+
+  width: 100%;
+
   gap: 0.6rem;
   padding: 0.6rem;
   background-color: lightgray;
