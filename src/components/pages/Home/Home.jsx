@@ -7,7 +7,8 @@ export const Home = () => {
         <>
             <HomeHeader />
             <main className="homeMain">
-                <h1>¡Welcome to LaPlata!</h1>
+                <h1 className=" homeTitle">Stay in the positive<br />Stay in the <span className="subtitleSpan">green</span></h1>
+                <p className="homeTitle secondTitle"></p>
             </main>
         </>
     )
