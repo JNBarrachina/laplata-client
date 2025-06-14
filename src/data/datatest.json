@@ -1,0 +1,283 @@
+[
+  {
+    "id": 1,
+    "title": "January Salary",
+    "amount": 2500,
+    "date": "2025-01-31",
+    "type": "income",
+    "description": "Monthly salary payment received from full-time employment, including a small annual bonus."
+  },
+  {
+    "id": 2,
+    "title": "Groceries",
+    "amount": -130.45,
+    "date": "2025-01-25",
+    "type": "expense",
+    "description": "Weekly grocery shopping at the local supermarket, including some bulk items for the month."
+  },
+  {
+    "id": 3,
+    "title": "Netflix Subscription",
+    "amount": -15.99,
+    "date": "2025-01-02",
+    "type": "expense",
+    "description": "Monthly subscription for streaming service."
+  },
+  {
+    "id": 4,
+    "title": "Electricity Bill",
+    "amount": -67.80,
+    "date": "2025-02-10",
+    "type": "expense",
+    "description": "Monthly electricity bill covering the usage during winter months."
+  },
+  {
+    "id": 5,
+    "title": "Freelance Project",
+    "amount": 600,
+    "date": "2025-02-15",
+    "type": "income",
+    "description": "One-time freelance payment for developing a client’s landing page and basic SEO setup."
+  },
+  {
+    "id": 6,
+    "title": "Public Transport Pass",
+    "amount": -50,
+    "date": "2025-02-01",
+    "type": "expense",
+    "description": "Monthly transportation pass for bus and metro in the city."
+  },
+  {
+    "id": 7,
+    "title": "Dining Out",
+    "amount": -45.60,
+    "date": "2025-02-18",
+    "type": "expense",
+    "description": "Dinner at a restaurant with friends to celebrate a birthday."
+  },
+  {
+    "id": 8,
+    "title": "Tax Refund",
+    "amount": 340,
+    "date": "2025-03-10",
+    "type": "income",
+    "description": "Annual tax refund from overpaid income taxes during the previous fiscal year."
+  },
+  {
+    "id": 9,
+    "title": "Home Internet",
+    "amount": -39.99,
+    "date": "2025-03-05",
+    "type": "expense",
+    "description": "Monthly internet bill for 300Mbps fiber connection."
+  },
+  {
+    "id": 10,
+    "title": "Coffee Shop",
+    "amount": -8.50,
+    "date": "2025-03-12",
+    "type": "expense",
+    "description": "Coffee and a pastry while working from a café."
+  },
+  {
+    "id": 11,
+    "title": "Book Purchase",
+    "amount": -22.95,
+    "date": "2025-03-17",
+    "type": "expense",
+    "description": "Purchase of a technical programming book for ongoing self-learning."
+  },
+  {
+    "id": 12,
+    "title": "April Salary",
+    "amount": 2500,
+    "date": "2025-04-30",
+    "type": "income",
+    "description": "Regular monthly salary from full-time work."
+  },
+  {
+    "id": 13,
+    "title": "Guitar Lessons",
+    "amount": -75,
+    "date": "2025-04-10",
+    "type": "expense",
+    "description": "Three weekly guitar lessons at the local music academy."
+  },
+  {
+    "id": 14,
+    "title": "Insurance Payout",
+    "amount": 150,
+    "date": "2025-04-18",
+    "type": "income",
+    "description": "Refund from a health insurance claim for a minor medical visit."
+  },
+  {
+    "id": 15,
+    "title": "Gym Membership",
+    "amount": -40,
+    "date": "2025-04-01",
+    "type": "expense",
+    "description": "Monthly fee for access to local gym facilities and classes."
+  },
+  {
+    "id": 16,
+    "title": "Birthday Gift",
+    "amount": -60,
+    "date": "2025-04-22",
+    "type": "expense",
+    "description": "Bought a smartwatch as a gift for a close friend’s birthday."
+  },
+  {
+    "id": 17,
+    "title": "Dividend Income",
+    "amount": 95.75,
+    "date": "2025-05-05",
+    "type": "income",
+    "description": "Quarterly dividends received from stock investments in technology funds."
+  },
+  {
+    "id": 18,
+    "title": "Medical Appointment",
+    "amount": -90,
+    "date": "2025-05-08",
+    "type": "expense",
+    "description": "Specialist consultation at a private clinic for allergy testing."
+  },
+  {
+    "id": 19,
+    "title": "Laptop Repair",
+    "amount": -180,
+    "date": "2025-05-15",
+    "type": "expense",
+    "description": "Replaced battery and upgraded RAM in work laptop."
+  },
+  {
+    "id": 20,
+    "title": "Remote Job Bonus",
+    "amount": 450,
+    "date": "2025-05-20",
+    "type": "income",
+    "description": "Performance-based bonus received for successful completion of a remote client project."
+  },
+  {
+    "id": 21,
+    "title": "Weekly Groceries",
+    "amount": -125.30,
+    "date": "2025-05-23",
+    "type": "expense",
+    "description": "Regular household groceries including cleaning products and snacks."
+  },
+  {
+    "id": 22,
+    "title": "Spotify Premium",
+    "amount": -9.99,
+    "date": "2025-06-01",
+    "type": "expense",
+    "description": "Monthly subscription for ad-free music streaming."
+  },
+  {
+    "id": 23,
+    "title": "June Salary",
+    "amount": 2500,
+    "date": "2025-06-01",
+    "type": "income",
+    "description": "Full-time job salary for the month of June."
+  },
+  {
+    "id": 24,
+    "title": "Phone Bill",
+    "amount": -29.90,
+    "date": "2025-06-05",
+    "type": "expense",
+    "description": "Mobile plan with data and unlimited national calls."
+  },
+  {
+    "id": 25,
+    "title": "Father’s Day Dinner",
+    "amount": -70,
+    "date": "2025-06-09",
+    "type": "expense",
+    "description": "Family dinner to celebrate Father's Day at a local steakhouse."
+  },
+  {
+    "id": 26,
+    "title": "Sold Old Bike",
+    "amount": 120,
+    "date": "2025-06-10",
+    "type": "income",
+    "description": "Sold a second-hand bicycle online after upgrading to a newer model."
+  },
+  {
+    "id": 27,
+    "title": "Digital Course Purchase",
+    "amount": -49.99,
+    "date": "2025-06-12",
+    "type": "expense",
+    "description": "Enrolled in a JavaScript bootcamp to improve frontend skills."
+  },
+  {
+    "id": 28,
+    "title": "Car Maintenance",
+    "amount": -220.75,
+    "date": "2025-06-13",
+    "type": "expense",
+    "description": "Routine car maintenance including oil change, filter replacement, and inspection."
+  },
+  {
+    "id": 29,
+    "title": "June Freelance",
+    "amount": 700,
+    "date": "2025-06-14",
+    "type": "income",
+    "description": "Freelance UI/UX redesign for a small business website."
+  },
+  {
+    "id": 30,
+    "title": "Weekend Getaway",
+    "amount": -180.25,
+    "date": "2025-06-07",
+    "type": "expense",
+    "description": "Short weekend trip including accommodation and meals in a nearby town."
+  },
+  {
+    "id": 31,
+    "title": "Birthday Transfer",
+    "amount": 100,
+    "date": "2025-06-02",
+    "type": "income",
+    "description": "Received money from family for birthday celebration expenses."
+  },
+  {
+    "id": 32,
+    "title": "Dog Grooming",
+    "amount": -35,
+    "date": "2025-06-11",
+    "type": "expense",
+    "description": "Pet grooming appointment including bath and nail trimming."
+  },
+  {
+    "id": 33,
+    "title": "E-book Sale",
+    "amount": 50,
+    "date": "2025-06-03",
+    "type": "income",
+    "description": "Royalties from self-published e-book through an online platform."
+  },
+  {
+    "id": 34,
+    "title": "Monthly Donation",
+    "amount": -25,
+    "date": "2025-06-06",
+    "type": "expense",
+    "description": "Recurring donation to a humanitarian organization."
+  },
+  {
+    "id": 35,
+    "title": "Web Hosting Renewal",
+    "amount": -60,
+    "date": "2025-06-04",
+    "type": "expense",
+    "description": "Annual renewal of domain and hosting plan for personal portfolio site."
+  }
+]
+
