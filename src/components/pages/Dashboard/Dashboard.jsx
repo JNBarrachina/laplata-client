@@ -1,3 +1,4 @@
+
 import { DashboardHeader } from "../../organisms/DashboardHeader/DashboardHeader";
 import { PaymentsContainer } from "../../organisms/PaymentsContainer/PaymentsContainer";
 import { BalanceData } from "../../molecules/BalanceData/BalanceData";
@@ -7,20 +8,20 @@ import { MonthFilter } from "../../molecules/PaymentFilters/MonthFilter";
 import "./Dashboard.css";
 
 export const Dashboard = () => {
+  const userLogged = JSON.parse(localStorage.getItem("userRegistered"));
 
   return (
     <>
       <DashboardHeader />
       <main className="dashboardMain">
         <section className="paymentsHeader">
-          <h1 className="dashboardTitle">Welcome, User</h1>
+          <h1 className="dashboardTitle">Welcome, {userLogged.name} {userLogged.lastname}</h1>
           <div className="paymentsFilters">
             <YearFilter />
             <MonthFilter />
           </div>
           <div className="financialBtns">
-            <button className="addDataBtn addExpenseBtn">+ Add Expense</button>
-            <button className="addDataBtn addIncomeBtn">+ Add Income</button>
+            <button className="addTransactionBtn">+ Add Transaction</button>
           </div>
         </section>
         <PaymentsContainer />

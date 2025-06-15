@@ -4,7 +4,6 @@ import { EditPayment } from "../../atoms/EditPayment/EditPayment";
 import { RemovePayment } from "../../atoms/RemovePayment/RemovePayment";
 
 export const Payment = ({ payment }) => {
-  console.log(payment);
 
   return (
     <article className="paymentContainer">

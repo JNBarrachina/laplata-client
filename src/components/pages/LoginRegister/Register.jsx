@@ -13,8 +13,31 @@ export const Register = () => {
     const [repeatPassword, setRepeatPasword] = useState()
     const [email, setEmail] = useState()
 
-    const handleRegister = () => {
-        console.log(name, lastname, password, repeatPassword, email)
+    const [registerAlert, setRegisterAlert] = useState("Completa el formulario de registro")
+
+    const handleRegister = (event) => {
+        event.preventDefault()
+
+        if (password !== repeatPassword) {
+
+            setRegisterAlert("Las contraseñas no coinciden")
+            return
+        }
+
+        if (!name || !lastname || !password || !repeatPassword || !email) {
+            setRegisterAlert("Debe completar todos los campos")
+            return
+        }
+
+        const userData = {
+            name,
+            lastname,
+            password,
+            repeatPassword,
+            email
+        }
+
+        localStorage.setItem("userRegistered", JSON.stringify(userData));
 
         navigate("/login")
     }
@@ -26,6 +49,7 @@ export const Register = () => {
                 <article className="userFormContainer">
                     <h1>Register</h1>
                     <form action="" className="userForm">
+                        <p className="registerAlert">{registerAlert}</p>
                         <input type="text" placeholder="Your name" onChange={(event) => setName(event.target.value)} />
                         <input type="text" placeholder="Your lastname" onChange={(event) => setLastname(event.target.value)} />
                         <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
