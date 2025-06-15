@@ -12,6 +12,7 @@ import { UserTransactionsContext } from "./contexts/UserTransactionsContext"
 
 function App() {
   const [userTransactionsList, setUserTransactionsList] = useState(registros);
+  const userLogged = localStorage.getItem("userRegistered");
 
   return (
     <>
@@ -21,7 +22,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={userLogged ? <Dashboard /> : <Login />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

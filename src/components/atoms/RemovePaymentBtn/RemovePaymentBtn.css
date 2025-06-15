@@ -1,21 +1,21 @@
 
-.btnDelete {
+.btnRemove {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
 }
 
-.btnDelete:hover {
+.btnRemove:hover {
   color: #fff;
   background-color: #bb2d3b;
   border-color: #b02a37;
 }
 
-.btnDelete:focus {
+.btnRemove:focus {
   box-shadow: 225, 83, 97;
 }
 
-.btnDelete:active {
+.btnRemove:active {
   color: #fff;
   background-color: #b02a37;
   border-color: #a52834;
