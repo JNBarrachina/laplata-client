@@ -1,14 +1,17 @@
+import { useState, useContext } from "react";
 
 import { DashboardHeader } from "../../organisms/DashboardHeader/DashboardHeader";
 import { PaymentsContainer } from "../../organisms/PaymentsContainer/PaymentsContainer";
 import { BalanceData } from "../../molecules/BalanceData/BalanceData";
 import { YearFilter } from "../../molecules/PaymentFilters/YearFilter";
 import { MonthFilter } from "../../molecules/PaymentFilters/MonthFilter";
+import { NewTransaction } from "../../molecules/NewTransaction/NewTransaction";
 
 import "./Dashboard.css";
 
 export const Dashboard = () => {
   const userLogged = JSON.parse(localStorage.getItem("userRegistered"));
+
 
   return (
     <>
@@ -20,8 +23,8 @@ export const Dashboard = () => {
             <YearFilter />
             <MonthFilter />
           </div>
-          <div className="financialBtns">
-            <button className="addTransactionBtn">+ Add Transaction</button>
+          <div className="newTransactionBtn">
+            <NewTransaction />
           </div>
         </section>
         <PaymentsContainer />

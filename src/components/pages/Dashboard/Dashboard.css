@@ -23,20 +23,31 @@
     gap: 0.6rem;
 }
 
-.financialBtns {    
+.paymentsFilters {
+    display: flex;
+
+    gap: 1rem;
+}
+
+.newTransactionDialog {
     display: flex;
     flex-flow: column wrap;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 
     gap: 1rem;
 }
 
-.addDataBtn {
-    width: 100%;
+.newTransactionForm {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 1rem;
 }
 
-.paymentsFilters {
+.newTransactionBtns {
     display: flex;
 
     gap: 1rem;
