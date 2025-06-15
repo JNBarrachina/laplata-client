@@ -1,19 +1,19 @@
-*{
+* {
   margin: 0;
   box-sizing: border-box;
 }
 
-*:focus{
-  outline: 6px solid orange;
+*:focus {
+  outline: 5px solid orange;
 }
 
 body {
   width: 100%;
-  
+
   background-color: whitesmoke;
 }
 
-#root{
+#root {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -33,23 +33,33 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 button {
   border: 1px solid transparent;
   border-radius: 8px;
-
   padding: 0.6em 1.2em;
 
   font-size: 1rem;
   font-weight: bold;
   font-family: inherit;
-  
+
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 button:hover {
-  border-color: #254D70;
+  border-color: #254d70;
 }
 
+input,
+textarea,
+select,
+dialog {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+}
 
+input,
+textarea {
+  min-width: 300px;
+  font-size: 14px;
+}

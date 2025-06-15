@@ -1,8 +1,8 @@
-import { useEffect, useState, useContext } from "react"
+import { useEffect, useState, useContext } from "react";
 
-import { UserTransactionsContext } from "../../../contexts/UserTransactionsContext"
+import { UserTransactionsContext } from "../../../contexts/UserTransactionsContext";
 
-import "../../pages/Dashboard/Dashboard.css"
+import "../../pages/Dashboard/Dashboard.css";
 
 export const BalanceData = () => {
     const { userTransactionsList } = useContext(UserTransactionsContext);
@@ -39,14 +39,23 @@ export const BalanceData = () => {
     useEffect(() => {
         calculateIncome();
         calculateExpense();
-    }, [userTransactionsList])
+    }, [userTransactionsList]);
 
     return (
         <section className="balanceDataContainer">
             <h3 className="balanceTitle">Balance</h3>
-            <p className="balanceText incomeText">Income: <span className="positiveNum">{income}€</span></p>
-            <p className="balanceText expenseText">Expense: <span className="negativeNum">-{expense}€</span></p>
-            <p className="balanceText balanceResultText">Balance: <span className={total > 0 ? "positiveNum" : "negativeNum"}>{total}€</span></p>
-        </section >
-    )
-}
+            <p className="balanceText incomeText">
+                Income: <span className="positiveNum">{income}€</span>
+            </p>
+            <p className="balanceText expenseText">
+                Expense: <span className="negativeNum">{expense}€</span>
+            </p>
+            <p className="balanceText balanceResultText">
+                Balance:{" "}
+                <span className={total > 0 ? "positiveNum" : "negativeNum"}>
+                    {total}€
+                </span>
+            </p>
+        </section>
+    );
+};
