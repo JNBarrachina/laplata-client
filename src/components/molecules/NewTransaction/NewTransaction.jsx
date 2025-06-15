@@ -2,51 +2,81 @@ import { useContext, useRef } from "react";
 
 import { UserTransactionsContext } from "../../../contexts/UserTransactionsContext";
 
-export const NewTransaction = () => {
-    const dialogRef = useRef(null);
-    const { userTransactionsList, setUserTransactionsList } = useContext(UserTransactionsContext);
+import "./NewTransaction.css";
 
-    const openModal = () => {
-        dialogRef.current?.showModal();
+export const NewTransaction = ({ dialogRef, modalType }) => {
+  const { userTransactionsList, setUserTransactionsList } = useContext(
+    UserTransactionsContext
+  );
+
+  const addTransaction = () => {
+    const newTransaction = {
+      id: Date.now(),
+      name: "New Transaction",
+      amount: 0,
     };
+    setUserTransactionsList([...userTransactionsList, newTransaction]);
+    closeModal();
+  };
 
-    const closeModal = () => {
-        dialogRef.current?.close();
+  const editTransaction = () => {
+    const editTransaction = {
+      name: "Edit Transaction",
+      amount: 0,
     };
+    setUserTransactionsList([...userTransactionsList, editTransaction]);
+    closeModal();
+  };
 
-    const addTransaction = () => {
-        const newTransaction = {
-            id: Date.now(),
-            name: "New Transaction",
-            amount: 0,
-        };
-        setUserTransactionsList([...userTransactionsList, transaction]);
-        closeModal();
-    };
+  const closeModal = () => {
+    dialogRef.current?.close();
+  };
+  return (
+    <>
+      <dialog ref={dialogRef} className="newTransactionDialog">
+        <div className="newTransactionDialogContainer">
+          {modalType == "Create" && (
+            <h2 className="dialogTitle">New Transaction</h2>
+          )}
+          {modalType == "Edit" && (
+            <h2 className="dialogTitle">Edit Transaction</h2>
+          )}
 
-    return (
-        <>
-            <button onClick={openModal}>+ New Transaction</button>
+          <form action="" className="newTransactionForm">
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" id="name" />
+            <label htmlFor="amount">Amount</label>
+            <input type="number" name="amount" id="amount" />
+            <label htmlFor="category">Category</label>
+            <select
+              className="newTransactionCategory"
+              name="category"
+              id="category"
+            >
+              <option value="expense">Expense</option>
+              <option value="income">Income</option>
+            </select>
+            <label htmlFor="description">Description</label>
+            <textarea
+              className="newTransactionDescription"
+              name="description"
+              id="description"
+              placeholder="Description"
+            ></textarea>
+          </form>
 
-            <dialog ref={dialogRef} className="newTransactionDialog">
-                <h2>New Transaction</h2>
-                <form action="" className="newTransactionForm">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" id="name" />
-                    <label htmlFor="amount">Amount</label>
-                    <input type="number" name="amount" id="amount" />
-                    <select name="category" id="">
-                        <option value="expense">Expense</option>
-                        <option value="income">Income</option>
-                    </select>
-                    <label htmlFor="description">Description</label>
-                    <textarea name="description" id="description" placeholder="Description"></textarea>
-                </form>
-                <div className="newTransactionBtns">
-                    <button onClick={addTransaction}>Add Transaction</button>
-                    <button onClick={closeModal}>Cerrar</button>
-                </div>
-            </dialog>
-        </>
-    );
-}
+          <div className="newTransactionBtns">
+            {modalType == "Create" && (
+              <button onClick={addTransaction}>Add Transaction</button>
+            )}
+            {modalType == "Edit" && (
+              <button onClick={editTransaction}>Edit Transaction</button>
+            )}
+
+            <button onClick={closeModal}>Close</button>
+          </div>
+        </div>
+      </dialog>
+    </>
+  );
+};

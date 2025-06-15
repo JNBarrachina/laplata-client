@@ -1,8 +1,8 @@
 .paymentContainer {
   padding: 0.6rem;
-  
-  background-color: whitesmoke;
-  border: 2px solid lightgrey;
+
+  background-color: #fff;
+  border: 1px solid lightgrey;
   border-radius: 8px;
 }
 
@@ -13,11 +13,25 @@
 
 .paymentSummary {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  gap: 0.6rem;
+}
+
+.paymentSummaryData1 {
+  width: 45%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  gap: 0.6rem;
+}
+
+.paymentSummaryData2 {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .paymentTitle {
@@ -28,29 +42,29 @@
 
 .paymentDesription {
   flex: 2;
-  
+
   text-align: left;
 }
 
 .paymentAmount {
   flex: 1;
-  
+
   font-weight: bolder;
 }
 
 .paymentDate {
   flex: 1;
-  
+
   color: grey;
   font-weight: bolder;
 }
 
 .btnContainer {
   flex: 1;
-  
+
   display: flex;
   justify-content: flex-end;
-  
+
   gap: 0.6rem;
 }
 

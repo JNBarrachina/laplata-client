@@ -1,9 +1,13 @@
 import "./EditPayment.css";
 
-export const EditPayment = () => {
+export const EditPayment = ({ action }) => {
   return (
-    <button className="paymentBtn btnEdit">
-      <img className="paymentImg imgEdit" src="/src/assets/edit.svg" alt="Edit" />
+    <button className="paymentBtn btnEdit" onClick={action}>
+      <img
+        className="paymentImg imgEdit"
+        src="/src/assets/edit.svg"
+        alt="Edit"
+      />
     </button>
   );
 };

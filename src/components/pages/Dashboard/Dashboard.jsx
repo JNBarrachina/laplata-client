@@ -1,5 +1,4 @@
-import { useState, useContext } from "react";
-
+import { useRef } from "react";
 
 import { DashboardHeader } from "../../organisms/DashboardHeader/DashboardHeader";
 import { PaymentsContainer } from "../../organisms/PaymentsContainer/PaymentsContainer";
@@ -12,24 +11,33 @@ import "./Dashboard.css";
 
 export const Dashboard = () => {
   const userLogged = JSON.parse(localStorage.getItem("userRegistered"));
+  const dialogRef = useRef(null);
+  const openModal = () => {
+    dialogRef.current?.showModal();
+  };
 
   return (
     <>
       <DashboardHeader />
       <main className="dashboardMain">
-        <section className="paymentsHeader">
-          <h1 className="dashboardTitle">Welcome, {userLogged.name} {userLogged.lastname}</h1>
+        <section className="paymentsHeaderWelcome">
+          <h1 className="dashboardTitle">
+            Welcome, {userLogged.name} {userLogged.lastname}
+          </h1>
+        </section>
+        <section className="paymentsHeaderFilters">
           <div className="paymentsFilters">
             <YearFilter />
             <MonthFilter />
           </div>
           <div className="newTransactionBtn">
-            <NewTransaction />
+            <button onClick={openModal}>+ New Transaction</button>
           </div>
         </section>
         <PaymentsContainer />
         <BalanceData />
-      </main >
+        <NewTransaction dialogRef={dialogRef} modalType="Create" />
+      </main>
     </>
   );
 };
