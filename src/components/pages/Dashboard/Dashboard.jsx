@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 
+
 import { DashboardHeader } from "../../organisms/DashboardHeader/DashboardHeader";
 import { PaymentsContainer } from "../../organisms/PaymentsContainer/PaymentsContainer";
 import { BalanceData } from "../../molecules/BalanceData/BalanceData";
@@ -11,7 +12,6 @@ import "./Dashboard.css";
 
 export const Dashboard = () => {
   const userLogged = JSON.parse(localStorage.getItem("userRegistered"));
-
 
   return (
     <>
