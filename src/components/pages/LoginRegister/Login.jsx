@@ -7,11 +7,30 @@ import { HomeHeader } from "../../organisms/HomeHeader/HomeHeader"
 export const Login = () => {
     const navigate = useNavigate()
 
-    const [username, setUsername] = useState()
+    const [email, setEmail] = useState()
     const [password, setPassword] = useState()
-    const [loginmessage, setLoginmessage] = useState("Introduce tu usuario y contraseña")
+    const [loginmessage, setLoginmessage] = useState("Introduce tu email y contraseña")
 
-    const handleLogin = () => {
+    const handleLogin = (event) => {
+        event.preventDefault()
+
+        const userRegistered = localStorage.getItem("userRegistered")
+
+        if (!email || !password) {
+            setLoginmessage("Debes completar todos los campos")
+            return
+        }
+
+        if (!userRegistered || JSON.parse(userRegistered).email !== email) {
+            setLoginmessage("Usuario no registrado")
+            return
+        }
+
+        if (JSON.parse(userRegistered).password !== password) {
+            setLoginmessage("Email o contraseña incorrectos")
+            return
+        }
+
         navigate("/dashboard")
     }
 
@@ -23,7 +42,7 @@ export const Login = () => {
                     <h1>Login</h1>
                     <form action="" className="userForm">
                         <p>{loginmessage}</p>
-                        <input type="text" placeholder="Usename" onChange={(event) => setUsername(event.target.value)} />
+                        <input type="email" placeholder="Email" onChange={(event) => setEmail(event.target.value)} />
                         <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
                         <button type="primary" onClick={handleLogin}>Login</button>
                     </form>
