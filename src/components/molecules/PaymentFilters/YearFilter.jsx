@@ -6,8 +6,6 @@ export const YearFilter = () => {
             <label htmlFor="">Year: </label>
             <select name="yearFilter" id="year">
                 <option value="all">All</option>
-                <option value="pending">Pending</option>
-                <option value="paid">Paid</option>
             </select>
         </div>
     )

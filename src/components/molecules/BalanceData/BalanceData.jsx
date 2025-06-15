@@ -1,16 +1,45 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+
+import { UserTransactionsContext } from "../../../contexts/UserTransactionsContext"
 
 import "../../pages/Dashboard/Dashboard.css"
 
 export const BalanceData = () => {
-    const [income, setIncome] = useState(0)
-    const [expense, setExpense] = useState(0)
-    const total = income - expense
+    const { userTransactionsList } = useContext(UserTransactionsContext);
+
+    const [income, setIncome] = useState(0);
+    const [expense, setExpense] = useState(0);
+    const [total, setTotal] = useState(0);
+
+    const calculateIncome = () => {
+        let totalIncome = 0;
+        userTransactionsList.forEach((transaction) => {
+            if (transaction.type === "income") {
+                totalIncome += transaction.amount;
+            }
+        });
+        setIncome(totalIncome.toFixed(2));
+    };
+
+    const calculateExpense = () => {
+        let totalExpense = 0;
+        userTransactionsList.forEach((transaction) => {
+            if (transaction.type === "expense") {
+                totalExpense += transaction.amount;
+            }
+        });
+        setExpense(totalExpense.toFixed(2));
+    };
 
     useEffect(() => {
-        setIncome(2000)
-        setExpense(1000)
-    }, [])
+        let newTotal = parseFloat(income) + parseFloat(expense);
+        setTotal(newTotal.toFixed(2));
+    }, [income, expense]);
+
+    useEffect(() => {
+        calculateIncome();
+        calculateExpense();
+    }, [userTransactionsList])
 
     return (
         <section className="balanceDataContainer">
