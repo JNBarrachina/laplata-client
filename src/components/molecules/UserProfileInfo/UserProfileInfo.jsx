@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const UserInfo = () => {
+export const UserProfileInfo = () => {
   return (
     <div>UserInfo</div>
   )

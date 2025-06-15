@@ -1,6 +1,6 @@
-import "./EditPayment.css";
+import "./EditPaymentBtn.css";
 
-export const EditPayment = ({ action }) => {
+export const EditPaymentBtn = ({ action }) => {
   return (
     <button className="paymentBtn btnEdit" onClick={action}>
       <img
