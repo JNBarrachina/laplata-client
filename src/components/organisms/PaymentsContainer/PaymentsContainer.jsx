@@ -5,14 +5,35 @@ import { UserTransactionsContext } from "../../../contexts/UserTransactionsConte
 import "./PaymentsContainer.css";
 import { Payment } from "../../molecules/Payment/Payment";
 
-export const PaymentsContainer = () => {
+export const PaymentsContainer = ({ year, month }) => {
   const { userTransactionsList } = useContext(UserTransactionsContext);
+  const userTransactionsListSorted = userTransactionsList
+    .filter((transaction) => {
+      const transactionDate = new Date(transaction.date);
+      const transactionYear = transactionDate.getFullYear().toString();
+      const transactionMonth = (transactionDate.getMonth() + 1)
+        .toString()
+        .padStart(2, "0");
+
+      const yearMatch = year === "all" || transactionYear === year;
+      const monthMatch = month === "all" || transactionMonth === month;
+
+      return yearMatch && monthMatch;
+    })
+    .sort(
+      (transactionA, transactionB) =>
+        new Date(transactionB.date) - new Date(transactionA.date)
+    );
 
   return (
     <section className="paymentsContainer">
-      {userTransactionsList.map((transaction) => (
-        <Payment key={transaction.id} transaction={transaction} />
-      ))}
+      {userTransactionsListSorted.length === 0 ? (
+        <h3>No results found.</h3>
+      ) : (
+        userTransactionsListSorted.map((transaction) => (
+          <Payment key={transaction.id} transaction={transaction} />
+        ))
+      )}
     </section>
   );
 };
