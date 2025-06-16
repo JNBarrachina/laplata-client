@@ -7,6 +7,7 @@ import { Payment } from "../../molecules/Payment/Payment";
 
 export const PaymentsContainer = ({ year, month }) => {
   const { userTransactionsList } = useContext(UserTransactionsContext);
+
   const userTransactionsListSorted = userTransactionsList
     .filter((transaction) => {
       const transactionDate = new Date(transaction.date);

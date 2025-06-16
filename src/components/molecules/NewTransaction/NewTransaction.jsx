@@ -11,10 +11,12 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
 
     const [newTitle, setNewTitle] = useState(transactionData.title);
     const [newAmount, setNewAmount] = useState(transactionData.amount);
-    const [newCategory, setNewCategory] = useState("expense");
+    const [newType, setNewCategory] = useState("expense");
     const [newDescription, setNewDescription] = useState(
         transactionData.description
     );
+
+    const [msg, setMsg] = useState("");
 
     function formatDate(date) {
         const year = date.getFullYear();
@@ -23,6 +25,24 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
         return `${year}-${month}-${day}`;
     }
 
+    const closeModal = () => {
+        dialogRef.current?.close();
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (newAmount <= 0) {
+            setMsg("Amount must be greater than zero");
+            return;
+        }
+
+        if (modalType == "Create") {
+            addTransaction();
+        } else if (modalType == "Edit") {
+            editTransaction();
+        }
+    }
     const addTransaction = () => {
         const newId = userTransactionsList[userTransactionsList.length - 1].id + 1;
         const today = new Date();
@@ -30,14 +50,16 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
         const newTransaction = {
             id: newId,
             title: newTitle,
-            amount: newAmount,
+            amount: parseFloat(newAmount),
             date: formatDate(today),
-            type: newCategory,
+            type: newType,
             description: newDescription,
         };
 
         userTransactionsList.push(newTransaction);
         setUserTransactionsList([...userTransactionsList]);
+
+        console.log(userTransactionsList);
 
         closeModal();
     };
@@ -50,9 +72,9 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
         const editedTransactionData = {
             id: transactionData.id,
             title: newTitle,
-            amount: newAmount,
+            amount: parseFloat(newAmount),
             date: transactionData.date,
-            category: transactionData.type,
+            type: transactionData.type,
             description: newDescription,
         };
 
@@ -64,9 +86,6 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
         closeModal();
     };
 
-    const closeModal = () => {
-        dialogRef.current?.close();
-    };
 
     return (
         <>
@@ -79,7 +98,7 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
                         <h2 className="dialogTitle">Edit Transaction</h2>
                     )}
 
-                    <form action="" className="newTransactionForm">
+                    <form action="" className="newTransactionForm" onSubmit={handleSubmit}>
                         <label htmlFor="name">Name</label>
                         <input
                             type="text"
@@ -102,7 +121,7 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
 
                         {modalType === "Create" && (
                             <>
-                                <label htmlFor="category">Category</label>
+                                <label htmlFor="category">Type</label>
                                 <select
                                     className="newTransactionCategory"
                                     name="category"
@@ -124,19 +143,19 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
                             onChange={(e) => setNewDescription(e.target.value)}
                             value={newDescription}
                         ></textarea>
+                        {msg && <p className="transactionMsgError">{msg}</p>}
+                        <div className="newTransactionBtns">
+                            <button className="backBtn" onClick={closeModal} type="button">
+                                Back
+                            </button>
+                            {modalType == "Create" && (
+                                <button type="submit">Add Transaction</button>
+                            )}
+                            {modalType == "Edit" && (
+                                <button type="submit">Edit Transaction</button>
+                            )}
+                        </div>
                     </form>
-
-                    <div className="newTransactionBtns">
-                        <button className="backBtn" onClick={closeModal}>
-                            Back
-                        </button>
-                        {modalType == "Create" && (
-                            <button onClick={addTransaction}>Add Transaction</button>
-                        )}
-                        {modalType == "Edit" && (
-                            <button onClick={editTransaction}>Edit Transaction</button>
-                        )}
-                    </div>
                 </div>
             </dialog>
         </>
