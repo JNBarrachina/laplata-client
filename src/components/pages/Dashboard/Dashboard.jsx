@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router";
 
 import { DashboardHeader } from "../../organisms/DashboardHeader/DashboardHeader";
 import { PaymentsContainer } from "../../organisms/PaymentsContainer/PaymentsContainer";
@@ -10,7 +11,7 @@ import { NewTransaction } from "../../molecules/NewTransaction/NewTransaction";
 import "./Dashboard.css";
 
 export const Dashboard = () => {
-  const userLogged = JSON.parse(localStorage.getItem("userRegistered"));
+  const userLogged = JSON.parse(localStorage.getItem("userLogged"));
   const dialogRef = useRef(null);
   const openModal = () => {
     dialogRef.current?.showModal();
