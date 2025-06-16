@@ -15,31 +15,31 @@ export const BalanceData = () => {
         let totalIncome = 0;
         userTransactionsList.forEach((transaction) => {
             if (transaction.type === "income") {
-                totalIncome += transaction.amount;
+                totalIncome += Number(transaction.amount);
             }
         });
-        setIncome(totalIncome);
+        setIncome(totalIncome.toFixed(2));
     };
 
     const calculateExpense = () => {
         let totalExpense = 0;
         userTransactionsList.forEach((transaction) => {
             if (transaction.type === "expense") {
-                totalExpense += transaction.amount;
+                totalExpense += Number(transaction.amount);
             }
         });
-        setExpense(totalExpense);
+        setExpense(totalExpense.toFixed(2));
     };
-
-    useEffect(() => {
-        let newTotal = parseFloat(income) - parseFloat(expense);
-        setTotal(newTotal.toFixed(2));
-    }, [income, expense]);
 
     useEffect(() => {
         calculateIncome();
         calculateExpense();
     }, [userTransactionsList]);
+
+    useEffect(() => {
+        let newTotal = parseFloat(income) - parseFloat(expense);
+        setTotal(newTotal.toFixed(2));
+    }, [income, expense]);
 
     return (
         <section className="balanceDataContainer">

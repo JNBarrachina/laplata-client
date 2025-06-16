@@ -16,21 +16,30 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
     transactionData.description
   );
 
-  const [msg, setMsg] = useState("");
+  function formatDate(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
 
   const addTransaction = () => {
     const newId = userTransactionsList[userTransactionsList.length - 1].id + 1;
+    const today = new Date();
 
     const newTransaction = {
       id: newId,
       title: newTitle,
       amount: newAmount,
-      date: Date.now(),
+      date: formatDate(today),
       type: newCategory,
       description: newDescription,
     };
 
-    setUserTransactionsList([...userTransactionsList, newTransaction]);
+    userTransactionsList.push(newTransaction);
+    setUserTransactionsList([...userTransactionsList]);
+
+    console.log(userTransactionsList);
     closeModal();
   };
 
@@ -102,7 +111,6 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
               onChange={(e) => setNewDescription(e.target.value)}
               value={newDescription}
             ></textarea>
-            <p>{msg}</p>
           </form>
 
           <div className="newTransactionBtns">
