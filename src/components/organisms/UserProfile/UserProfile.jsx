@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { UserTransactionsContext } from "../../../contexts/UserTransactionsContext";
 
 import { DashboardHeader } from "../DashboardHeader/DashboardHeader"
+import { TransactionsPerYearChart } from "../../molecules/UserProfileCharts/TransactionsPerYearChart";
 
 export const UserProfile = () => {
   const userLogged = JSON.parse(localStorage.getItem("userLogged"));
@@ -27,6 +28,9 @@ export const UserProfile = () => {
           <p>Total: {userTransactionsList.length}</p>
           <p>Incomes: {userTransactionsList.filter((transaction) => transaction.type === "income").length}</p>
           <p>Expenses: {userTransactionsList.filter((transaction) => transaction.type === "expense").length}</p>
+        </section>
+        <section className="userTransactionsCharts">
+          <TransactionsPerYearChart />
         </section>
       </main>
     </>
