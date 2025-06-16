@@ -1,0 +1,26 @@
+.homeMain {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  width: 100%;
+  height: 90vh;
+
+  padding: 6rem;
+
+  background-image: url("../../../assets/homebackground.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  color: #254d70;
+
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 3rem;
+}
+
+.subtitleSpan {
+  color: green;
+}

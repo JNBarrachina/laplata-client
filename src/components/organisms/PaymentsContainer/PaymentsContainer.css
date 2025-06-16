@@ -1,0 +1,13 @@
+.paymentsContainer {
+  display: flex;
+  flex-flow: column nowrap;
+
+  width: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  gap: 0.5rem;
+
+  border-radius: 8px;
+}

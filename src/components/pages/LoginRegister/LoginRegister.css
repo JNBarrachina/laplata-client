@@ -1,0 +1,53 @@
+.userFormContainer {
+  min-width: 400px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid lightgrey;
+  border-radius: 8px;
+
+  gap: 1rem;
+  padding: 2rem;
+}
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+}
+
+.userForm {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+input {
+  font-weight: bolder;
+
+  padding: 0.6rem;
+}
+
+button {
+  font-weight: bold;
+
+  background-color: #254d70;
+  color: white;
+}
+
+button:hover {
+  background-color: whitesmoke;
+  color: #254d70;
+
+  transform: scale(1.1);
+  transition: 0.4s;
+}
