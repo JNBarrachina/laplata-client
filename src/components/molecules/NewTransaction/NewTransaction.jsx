@@ -18,7 +18,7 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
 
     function formatDate(date) {
         const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+        const month = String(date.getMonth() + 1).padStart(2, '0');
         const day = String(date.getDate()).padStart(2, '0');
         return `${year}-${month}-${day}`;
     }
@@ -39,20 +39,25 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
         userTransactionsList.push(newTransaction)
         setUserTransactionsList([...userTransactionsList]);
 
-        console.log(userTransactionsList)
         closeModal();
     };
 
     const editTransaction = () => {
+        const transactionIndex = userTransactionsList.findIndex(x => x.id == transactionData.id)
+
         const editedTransactionData = {
             id: transactionData.id,
-            name,
-            amount,
-            category,
-            description,
+            title: newTitle,
+            amount: newAmount,
+            date: transactionData.date,
+            category: transactionData.type,
+            description: newDescription
         };
 
-        setUserTransactionsList([...userTransactionsList, editTransaction]);
+        userTransactionsList[transactionIndex] = editedTransactionData
+        setUserTransactionsList([...userTransactionsList]);
+
+        console.log(userTransactionsList)
 
         closeModal();
     };
@@ -92,16 +97,18 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
                             value={newAmount}
                             required
                         />
-                        <label htmlFor="category">Category</label>
-                        <select
-                            className="newTransactionCategory"
-                            name="category"
-                            id="category"
-                            onChange={(e) => setNewCategory(e.target.value)}
-                        >
-                            <option value="expense">Expense</option>
-                            <option value="income">Income</option>
-                        </select>
+
+                        {modalType === "Create" && <><label htmlFor="category">Category</label>
+                            <select
+                                className="newTransactionCategory"
+                                name="category"
+                                id="category"
+                                onChange={(e) => setNewCategory(e.target.value)}
+                            >
+                                <option value="expense">Expense</option>
+                                <option value="income">Income</option>
+                            </select></>}
+
                         <label htmlFor="description">Description</label>
                         <textarea
                             className="newTransactionDescription"
