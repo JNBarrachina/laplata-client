@@ -22,7 +22,6 @@ function RedirectLogged({ children }) {
 
 function App() {
   const [userTransactionsList, setUserTransactionsList] = useState(registros);
-  const userLogged = localStorage.getItem("userRegistered");
 
   return (
     <>
