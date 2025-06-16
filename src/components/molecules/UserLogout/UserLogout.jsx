@@ -17,7 +17,7 @@ export const UserLogout = ({ modalRef }) => {
       <div className="logoutTooltipContainer">
         <h3>Are you sure you want to log out?</h3>
         <div className="logoutBtnsContainer">
-          <button className="backButton" onClick={closeModal}>
+          <button className="backBtn" onClick={closeModal}>
             Back
           </button>
           <button className="logoutBtns" onClick={logout}>
