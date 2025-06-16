@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import { UserTransactionsContext } from "../../../contexts/UserTransactionsContext";
 
@@ -6,8 +6,7 @@ import "./PaymentsContainer.css";
 import { Payment } from "../../molecules/Payment/Payment";
 
 export const PaymentsContainer = () => {
-  const { userTransactionsList, setUserTransactionsList } = useContext(UserTransactionsContext);
-  console.log(userTransactionsList);
+  const { userTransactionsList } = useContext(UserTransactionsContext);
 
   return (
     <section className="paymentsContainer">

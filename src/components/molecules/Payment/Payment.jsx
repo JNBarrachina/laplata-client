@@ -1,15 +1,25 @@
+import { useRef } from "react";
+
 import "./Payment.css";
 
-import { EditPayment } from "../../atoms/EditPayment/EditPayment";
-import { RemovePayment } from "../../atoms/RemovePayment/RemovePayment";
-import { useRef } from "react";
+import { EditPaymentBtn } from "../../atoms/EditPaymentBtn/EditPaymentBtn";
+import { RemovePaymentBtn } from "../../atoms/RemovePaymentBtn/RemovePaymentBtn";
+
 import { NewTransaction } from "../../molecules/NewTransaction/NewTransaction";
+import { RemoveTransaction } from "../../molecules/RemoveTransaction/RemoveTransaction";
 
 export const Payment = ({ transaction }) => {
   const dialogRef = useRef(null);
+  const tooltipRef = useRef(null);
+
   const openModal = () => {
     dialogRef.current?.showModal();
   };
+
+  const openTooltip = () => {
+    tooltipRef.current?.showModal();
+  };
+
   return (
     <article className="paymentContainer">
       <details className="paymentDetailsContainer">
@@ -29,8 +39,8 @@ export const Payment = ({ transaction }) => {
           <div className="paymentSummaryData2">
             <p className="paymentDate">{transaction.date}</p>
             <div className="btnContainer">
-              <EditPayment action={openModal} />
-              <RemovePayment />
+              <EditPaymentBtn action={openModal} />
+              <RemovePaymentBtn action={openTooltip} />
             </div>
           </div>
         </summary>
@@ -39,6 +49,7 @@ export const Payment = ({ transaction }) => {
         </div>
       </details>
       <NewTransaction dialogRef={dialogRef} modalType="Edit" />
+      <RemoveTransaction tooltipRef={tooltipRef} transaction={transaction} />
     </article>
   );
 };

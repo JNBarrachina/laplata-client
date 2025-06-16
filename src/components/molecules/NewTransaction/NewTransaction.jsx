@@ -31,6 +31,7 @@ export const NewTransaction = ({ dialogRef, modalType }) => {
   const closeModal = () => {
     dialogRef.current?.close();
   };
+
   return (
     <>
       <dialog ref={dialogRef} className="newTransactionDialog">
