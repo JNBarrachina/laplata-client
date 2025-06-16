@@ -87,6 +87,25 @@
   color: red;
 }
 
+.userProfileData, .userTransactionsInfo {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid #254d70;
+  border-radius: 1rem;
+  padding: 1rem;
+
+}
+
+.userProfileImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+
 @media screen and (max-width: 950px) {
   .dashboardHeaderContainer {
     width: 100%;

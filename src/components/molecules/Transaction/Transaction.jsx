@@ -1,14 +1,14 @@
 import { useRef } from "react";
 
-import "./Payment.css";
+import "./Transaction.css";
 
-import { EditPaymentBtn } from "../../atoms/EditPaymentBtn/EditPaymentBtn";
-import { RemovePaymentBtn } from "../../atoms/RemovePaymentBtn/RemovePaymentBtn";
+import { EditTransactionBtn } from "../../atoms/EditTransactionBtn/EditTransactionBtn";
+import { RemoveTransactionBtn } from "../../atoms/RemoveTransactionBtn/RemoveTransactionBtn";
 
-import { NewTransaction } from "../../molecules/NewTransaction/NewTransaction";
-import { RemoveTransaction } from "../../molecules/RemoveTransaction/RemoveTransaction";
+import { NewTransaction } from "../NewTransaction/NewTransaction";
+import { RemoveTransaction } from "../RemoveTransaction/RemoveTransaction";
 
-export const Payment = ({ transaction }) => {
+export const Transaction = ({ transaction }) => {
   const dialogRef = useRef(null);
   const tooltipRef = useRef(null);
 
@@ -39,8 +39,8 @@ export const Payment = ({ transaction }) => {
           <div className="paymentSummaryData2">
             <p className="paymentDate">{transaction.date}</p>
             <div className="btnContainer">
-              <EditPaymentBtn action={openModal} />
-              <RemovePaymentBtn action={openTooltip} />
+              <EditTransactionBtn action={openModal} />
+              <RemoveTransactionBtn action={openTooltip} />
             </div>
           </div>
         </summary>

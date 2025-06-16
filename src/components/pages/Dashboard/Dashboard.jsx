@@ -1,10 +1,10 @@
 import { useState, useRef } from "react";
 
 import { DashboardHeader } from "../../organisms/DashboardHeader/DashboardHeader";
-import { PaymentsContainer } from "../../organisms/PaymentsContainer/PaymentsContainer";
+import { TransactionsContainer } from "../../organisms/TransactionsContainer/TransactionsContainer";
 import { BalanceData } from "../../molecules/BalanceData/BalanceData";
-import { YearFilter } from "../../molecules/PaymentFilters/YearFilter";
-import { MonthFilter } from "../../molecules/PaymentFilters/MonthFilter";
+import { YearFilter } from "../../molecules/TransactionsFilters/YearFilter";
+import { MonthFilter } from "../../molecules/TransactionsFilters/MonthFilter";
 import { NewTransaction } from "../../molecules/NewTransaction/NewTransaction";
 
 import "./Dashboard.css";
@@ -61,7 +61,7 @@ export const Dashboard = () => {
             <button onClick={openModal}>+ New Transaction</button>
           </div>
         </section>
-        <PaymentsContainer year={selectedYear} month={selectedMonth} />
+        <TransactionsContainer year={selectedYear} month={selectedMonth} />
         <BalanceData />
         <NewTransaction
           dialogRef={dialogRef}
