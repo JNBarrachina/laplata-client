@@ -18,7 +18,7 @@ export const BalanceData = () => {
                 totalIncome += transaction.amount;
             }
         });
-        setIncome(totalIncome.toFixed(2));
+        setIncome(totalIncome);
     };
 
     const calculateExpense = () => {
@@ -28,11 +28,11 @@ export const BalanceData = () => {
                 totalExpense += transaction.amount;
             }
         });
-        setExpense(totalExpense.toFixed(2));
+        setExpense(totalExpense);
     };
 
     useEffect(() => {
-        let newTotal = parseFloat(income) + parseFloat(expense);
+        let newTotal = parseFloat(income) - parseFloat(expense);
         setTotal(newTotal.toFixed(2));
     }, [income, expense]);
 

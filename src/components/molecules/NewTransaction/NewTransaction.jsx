@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useState, useContext } from "react";
 
 import { UserTransactionsContext } from "../../../contexts/UserTransactionsContext";
 
@@ -9,22 +9,40 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
         UserTransactionsContext
     );
 
+    const [newTitle, setNewTitle] = useState(transactionData.title);
+    const [newAmount, setNewAmount] = useState(transactionData.amount);
+    const [newCategory, setNewCategory] = useState("expense");
+    const [newDescription, setNewDescription] = useState(transactionData.description);
+
+    const [msg, setMsg] = useState("");
+
     const addTransaction = () => {
+        const newId = userTransactionsList[userTransactionsList.length - 1].id + 1
+
         const newTransaction = {
-            id: Date.now(),
-            name: "New Transaction",
-            amount: 0,
+            id: newId,
+            title: newTitle,
+            amount: newAmount,
+            date: Date.now(),
+            type: newCategory,
+            description: newDescription
         };
+
         setUserTransactionsList([...userTransactionsList, newTransaction]);
         closeModal();
     };
 
     const editTransaction = () => {
-        const editTransaction = {
-            name: "Edit Transaction",
-            amount: 0,
+        const editedTransactionData = {
+            id: transactionData.id,
+            name,
+            amount,
+            category,
+            description,
         };
+
         setUserTransactionsList([...userTransactionsList, editTransaction]);
+
         closeModal();
     };
 
@@ -45,14 +63,15 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
 
                     <form action="" className="newTransactionForm">
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" id="name" placeholder={transactionData.title} />
+                        <input type="text" name="name" id="name" onChange={(e) => setNewTitle(e.target.value)} value={newTitle} required />
                         <label htmlFor="amount">Amount</label>
-                        <input type="number" name="amount" id="amount" placeholder={transactionData.amount} />
+                        <input type="number" name="amount" id="amount" placeholder={transactionData.amount} onChange={(e) => setNewAmount(e.target.value)} value={newAmount} required />
                         <label htmlFor="category">Category</label>
                         <select
                             className="newTransactionCategory"
                             name="category"
                             id="category"
+                            onChange={(e) => setNewCategory(e.target.value)}
                         >
                             <option value="expense">Expense</option>
                             <option value="income">Income</option>
@@ -63,10 +82,14 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
                             name="description"
                             id="description"
                             placeholder={transactionData.description}
+                            onChange={(e) => setNewDescription(e.target.value)}
+                            value={newDescription}
                         ></textarea>
+                        <p>{msg}</p>
                     </form>
 
                     <div className="newTransactionBtns">
+                        <button onClick={closeModal}>Close</button>
                         {modalType == "Create" && (
                             <button onClick={addTransaction}>Add Transaction</button>
                         )}
@@ -74,7 +97,6 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
                             <button onClick={editTransaction}>Edit Transaction</button>
                         )}
 
-                        <button onClick={closeModal}>Close</button>
                     </div>
                 </div>
             </dialog>
