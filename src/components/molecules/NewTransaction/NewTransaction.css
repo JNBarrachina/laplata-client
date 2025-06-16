@@ -53,3 +53,7 @@
   padding: 0.5rem;
   height: 5rem;
 }
+
+::placeholder {
+  color: lightgray;
+}

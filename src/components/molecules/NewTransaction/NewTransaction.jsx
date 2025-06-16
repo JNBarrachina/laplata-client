@@ -4,10 +4,10 @@ import { UserTransactionsContext } from "../../../contexts/UserTransactionsConte
 
 import "./NewTransaction.css";
 
-export const NewTransaction = ({ dialogRef, modalType }) => {
-  const { userTransactionsList, setUserTransactionsList } = useContext(
-    UserTransactionsContext
-  );
+export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
+    const { userTransactionsList, setUserTransactionsList } = useContext(
+        UserTransactionsContext
+    );
 
   const addTransaction = () => {
     const newTransaction = {
@@ -43,28 +43,28 @@ export const NewTransaction = ({ dialogRef, modalType }) => {
             <h2 className="dialogTitle">Edit Transaction</h2>
           )}
 
-          <form action="" className="newTransactionForm">
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" />
-            <label htmlFor="amount">Amount</label>
-            <input type="number" name="amount" id="amount" />
-            <label htmlFor="category">Category</label>
-            <select
-              className="newTransactionCategory"
-              name="category"
-              id="category"
-            >
-              <option value="expense">Expense</option>
-              <option value="income">Income</option>
-            </select>
-            <label htmlFor="description">Description</label>
-            <textarea
-              className="newTransactionDescription"
-              name="description"
-              id="description"
-              placeholder="Description"
-            ></textarea>
-          </form>
+                    <form action="" className="newTransactionForm">
+                        <label htmlFor="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder={transactionData.title} />
+                        <label htmlFor="amount">Amount</label>
+                        <input type="number" name="amount" id="amount" placeholder={transactionData.amount} />
+                        <label htmlFor="category">Category</label>
+                        <select
+                            className="newTransactionCategory"
+                            name="category"
+                            id="category"
+                        >
+                            <option value="expense">Expense</option>
+                            <option value="income">Income</option>
+                        </select>
+                        <label htmlFor="description">Description</label>
+                        <textarea
+                            className="newTransactionDescription"
+                            name="description"
+                            id="description"
+                            placeholder={transactionData.description}
+                        ></textarea>
+                    </form>
 
           <div className="newTransactionBtns">
             {modalType == "Create" && (
