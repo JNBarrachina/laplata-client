@@ -1,55 +1,53 @@
-.userFormContainer{
-    min-width: 400px;
+.userFormContainer {
+  min-width: 400px;
 
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid lightgrey;
+  border-radius: 8px;
 
-    background-color: white;
-    border: 2px solid #254D70;
-    border-radius: 8px;
-
-    gap: 1rem;
-    padding: 2rem;
+  gap: 1rem;
+  padding: 2rem;
 }
 
-main{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 
-    padding: 1rem;
+  padding: 1rem;
 }
 
+.userForm {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 
-.userForm{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-
-    gap: 1rem;
+  gap: 1rem;
 }
 
-input{
-    font-weight: bolder;
+input {
+  font-weight: bolder;
 
-    padding: 0.6rem;
+  padding: 0.6rem;
 }
 
-button{
-    font-weight: bold;
+button {
+  font-weight: bold;
 
-    background-color: #254D70;
-    color: white;
+  background-color: #254d70;
+  color: white;
 }
 
-button:hover{
-    background-color: whitesmoke;
-    color: #254D70;
+button:hover {
+  background-color: whitesmoke;
+  color: #254d70;
 
-    transform: scale(1.1);
-    transition: 0.4s;
+  transform: scale(1.1);
+  transition: 0.4s;
 }
