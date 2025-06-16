@@ -50,6 +50,18 @@ button:hover {
   border-color: #254d70;
 }
 
+.backBtn{
+  background-color: white;
+  border-color: #254d70;
+  color: #254d70;
+}
+
+.backBtn:hover{
+  background-color: #254d70;
+  color: white;
+  
+}
+
 input,
 textarea,
 select,
