@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 
 import { UserTransactionsContext } from "../../../contexts/UserTransactionsContext";
 
@@ -9,39 +9,39 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
         UserTransactionsContext
     );
 
-    const addTransaction = () => {
-        const newTransaction = {
-            id: Date.now(),
-            name: "New Transaction",
-            amount: 0,
-        };
-        setUserTransactionsList([...userTransactionsList, newTransaction]);
-        closeModal();
+  const addTransaction = () => {
+    const newTransaction = {
+      id: Date.now(),
+      name: "New Transaction",
+      amount: 0,
     };
+    setUserTransactionsList([...userTransactionsList, newTransaction]);
+    closeModal();
+  };
 
-    const editTransaction = () => {
-        const editTransaction = {
-            name: "Edit Transaction",
-            amount: 0,
-        };
-        setUserTransactionsList([...userTransactionsList, editTransaction]);
-        closeModal();
+  const editTransaction = () => {
+    const editTransaction = {
+      name: "Edit Transaction",
+      amount: 0,
     };
+    setUserTransactionsList([...userTransactionsList, editTransaction]);
+    closeModal();
+  };
 
-    const closeModal = () => {
-        dialogRef.current?.close();
-    };
+  const closeModal = () => {
+    dialogRef.current?.close();
+  };
 
-    return (
-        <>
-            <dialog ref={dialogRef} className="newTransactionDialog">
-                <div className="newTransactionDialogContainer">
-                    {modalType == "Create" && (
-                        <h2 className="dialogTitle">New Transaction</h2>
-                    )}
-                    {modalType == "Edit" && (
-                        <h2 className="dialogTitle">Edit Transaction</h2>
-                    )}
+  return (
+    <>
+      <dialog ref={dialogRef} className="newTransactionDialog">
+        <div className="newTransactionDialogContainer">
+          {modalType == "Create" && (
+            <h2 className="dialogTitle">New Transaction</h2>
+          )}
+          {modalType == "Edit" && (
+            <h2 className="dialogTitle">Edit Transaction</h2>
+          )}
 
                     <form action="" className="newTransactionForm">
                         <label htmlFor="name">Name</label>
@@ -66,18 +66,18 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
                         ></textarea>
                     </form>
 
-                    <div className="newTransactionBtns">
-                        {modalType == "Create" && (
-                            <button onClick={addTransaction}>Add Transaction</button>
-                        )}
-                        {modalType == "Edit" && (
-                            <button onClick={editTransaction}>Edit Transaction</button>
-                        )}
+          <div className="newTransactionBtns">
+            {modalType == "Create" && (
+              <button onClick={addTransaction}>Add Transaction</button>
+            )}
+            {modalType == "Edit" && (
+              <button onClick={editTransaction}>Edit Transaction</button>
+            )}
 
-                        <button onClick={closeModal}>Close</button>
-                    </div>
-                </div>
-            </dialog>
-        </>
-    );
+            <button onClick={closeModal}>Close</button>
+          </div>
+        </div>
+      </dialog>
+    </>
+  );
 };
