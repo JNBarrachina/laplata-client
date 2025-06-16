@@ -105,6 +105,7 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
                             name="name"
                             id="name"
                             placeholder="Insert a name for the transaction"
+
                             onChange={(e) => setNewTitle(e.target.value)}
                             value={newTitle}
                             required
@@ -115,6 +116,7 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
                             name="amount"
                             id="amount"
                             placeholder="Insert the amount"
+
                             onChange={(e) => setNewAmount(e.target.value)}
                             value={newAmount}
                             required
@@ -141,6 +143,7 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
                             name="description"
                             id="description"
                             placeholder="Insert a description for the transaction"
+
                             onChange={(e) => setNewDescription(e.target.value)}
                             value={newDescription}
                         ></textarea>
