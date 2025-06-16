@@ -59,6 +59,8 @@
 }
 
 .transactionMsgError {
+  align-self: center;
+
   font-weight: bolder;
   color: red;
 }
