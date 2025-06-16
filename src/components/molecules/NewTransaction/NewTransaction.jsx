@@ -4,7 +4,7 @@ import { UserTransactionsContext } from "../../../contexts/UserTransactionsConte
 
 import "./NewTransaction.css";
 
-export const NewTransaction = ({ dialogRef, modalType }) => {
+export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
     const { userTransactionsList, setUserTransactionsList } = useContext(
         UserTransactionsContext
     );
@@ -45,9 +45,9 @@ export const NewTransaction = ({ dialogRef, modalType }) => {
 
                     <form action="" className="newTransactionForm">
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" id="name" />
+                        <input type="text" name="name" id="name" placeholder={transactionData.title} />
                         <label htmlFor="amount">Amount</label>
-                        <input type="number" name="amount" id="amount" />
+                        <input type="number" name="amount" id="amount" placeholder={transactionData.amount} />
                         <label htmlFor="category">Category</label>
                         <select
                             className="newTransactionCategory"
@@ -62,7 +62,7 @@ export const NewTransaction = ({ dialogRef, modalType }) => {
                             className="newTransactionDescription"
                             name="description"
                             id="description"
-                            placeholder="Description"
+                            placeholder={transactionData.description}
                         ></textarea>
                     </form>
 
