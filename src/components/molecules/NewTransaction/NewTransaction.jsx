@@ -97,6 +97,7 @@ export const NewTransaction = ({ dialogRef, modalType, transactionData }) => {
                             value={newAmount}
                             required
                         />
+
                         {modalType === "Create" && <><label htmlFor="category">Category</label>
                             <select
                                 className="newTransactionCategory"
