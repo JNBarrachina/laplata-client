@@ -48,7 +48,7 @@ export const Payment = ({ transaction }) => {
           <p className="paymentDescription">{transaction.description}</p>
         </div>
       </details>
-      <NewTransaction dialogRef={dialogRef} modalType="Edit" />
+      <NewTransaction dialogRef={dialogRef} modalType="Edit" transactionData={transaction} />
       <RemoveTransaction tooltipRef={tooltipRef} transaction={transaction} />
     </article>
   );

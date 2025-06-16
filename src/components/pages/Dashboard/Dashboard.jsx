@@ -36,7 +36,7 @@ export const Dashboard = () => {
         </section>
         <PaymentsContainer />
         <BalanceData />
-        <NewTransaction dialogRef={dialogRef} modalType="Create" />
+        <NewTransaction dialogRef={dialogRef} modalType="Create" transactionData={""} />
       </main>
     </>
   );

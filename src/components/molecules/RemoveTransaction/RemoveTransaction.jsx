@@ -26,8 +26,8 @@ export const RemoveTransaction = ({ tooltipRef, transaction }) => {
                 <p>¿Seguro que quieres eliminar esta transacción?</p>
                 <p className="removeTransactionTitle">{transaction.title}</p>
                 <div className="removeTransactionBtnsContainer">
-                    <button className="removeTransactionBtns" onClick={removeTransaction}>Si</button>
-                    <button className="removeTransactionBtns" onClick={closeTooltip}>No</button>
+                    <button className="removeTransactionBtns removeCancelBtn" onClick={closeTooltip}>No</button>
+                    <button className="removeTransactionBtns removeConfirmBtn" onClick={removeTransaction}>Si</button>
                 </div>
             </div>
         </dialog>
