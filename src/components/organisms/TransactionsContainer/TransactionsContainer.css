@@ -1,4 +1,4 @@
-.paymentsContainer {
+.transactionsContainer {
   display: flex;
   flex-flow: column nowrap;
 

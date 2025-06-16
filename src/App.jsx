@@ -5,6 +5,7 @@ import { Home } from "./components/pages/Home/Home";
 import { Login } from "./components/pages/LoginRegister/Login";
 import { Register } from "./components/pages/LoginRegister/Register";
 import { Dashboard } from "./components/pages/Dashboard/Dashboard";
+import { UserProfile } from "./components/organisms/UserProfile/UserProfile";
 import { NotFound } from "./components/pages/NotFound/NotFound";
 
 import registros from "../src/data/datatest.json";
@@ -59,6 +60,14 @@ function App() {
               element={
                 <RequireAuth>
                   <Dashboard />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/userprofile"
+              element={
+                <RequireAuth>
+                  <UserProfile />
                 </RequireAuth>
               }
             />

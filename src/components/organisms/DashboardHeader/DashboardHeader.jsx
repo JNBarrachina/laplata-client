@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useRef } from "react";
+
 import { UserLogout } from "../../molecules/UserLogout/UserLogout";
 
 import "./DashboardHeader.css";
@@ -24,7 +25,7 @@ export const DashboardHeader = () => {
             />
             <p className="linkText">Dashboard</p>
           </Link>
-          <Link to="/" className="dashboardHeaderLink">
+          <Link to="/userprofile" className="dashboardHeaderLink">
             <img
               className="dashboardHeaderImg"
               src="/src/assets/useraccount.svg"

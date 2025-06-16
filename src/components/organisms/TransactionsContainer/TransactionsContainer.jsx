@@ -2,10 +2,10 @@ import { useState, useContext, useEffect } from "react";
 
 import { UserTransactionsContext } from "../../../contexts/UserTransactionsContext";
 
-import "./PaymentsContainer.css";
-import { Payment } from "../../molecules/Payment/Payment";
+import "./TransactionsContainer.css";
+import { Transaction } from "../../molecules/Transaction/Transaction";
 
-export const PaymentsContainer = ({ year, month }) => {
+export const TransactionsContainer = ({ year, month }) => {
   const { userTransactionsList } = useContext(UserTransactionsContext);
 
   const userTransactionsListSorted = userTransactionsList
@@ -27,12 +27,12 @@ export const PaymentsContainer = ({ year, month }) => {
     );
 
   return (
-    <section className="paymentsContainer">
+    <section className="transactionsContainer">
       {userTransactionsListSorted.length === 0 ? (
         <h3>No results found.</h3>
       ) : (
         userTransactionsListSorted.map((transaction) => (
-          <Payment key={transaction.id} transaction={transaction} />
+          <Transaction key={transaction.id} transaction={transaction} />
         ))
       )}
     </section>
