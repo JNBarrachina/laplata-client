@@ -57,3 +57,10 @@
 ::placeholder {
   color: lightgray;
 }
+
+.transactionMsgError {
+  align-self: center;
+
+  font-weight: bolder;
+  color: red;
+}

@@ -14,18 +14,18 @@
 
 .paymentsHeaderWelcome {
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+
   width: 100%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   gap: 0.6rem;
 }
 
 .paymentsHeaderFilters {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
 
@@ -56,6 +56,7 @@
 }
 
 .balanceDataContainer {
+  margin-top: auto;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -86,7 +87,30 @@
   color: red;
 }
 
+.userProfileData, .userTransactionsInfo {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid #254d70;
+  border-radius: 1rem;
+  padding: 1rem;
+
+}
+
+.userProfileImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+
 @media screen and (max-width: 950px) {
+  .dashboardMain{
+    padding: 0.8rem;
+  }
+
   .dashboardHeaderContainer {
     width: 100%;
     height: fit-content;
@@ -116,6 +140,6 @@
   }
 
   .dashboardTitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
