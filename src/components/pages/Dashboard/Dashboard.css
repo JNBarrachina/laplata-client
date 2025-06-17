@@ -14,18 +14,18 @@
 
 .paymentsHeaderWelcome {
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+
   width: 100%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   gap: 0.6rem;
 }
 
 .paymentsHeaderFilters {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
 
@@ -107,6 +107,10 @@
 
 
 @media screen and (max-width: 950px) {
+  .dashboardMain{
+    padding: 0.8rem;
+  }
+
   .dashboardHeaderContainer {
     width: 100%;
     height: fit-content;
@@ -136,6 +140,6 @@
   }
 
   .dashboardTitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
