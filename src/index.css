@@ -3,10 +3,6 @@
   box-sizing: border-box;
 }
 
-*:focus {
-  outline: 5px solid orange;
-}
-
 body {
   width: 100%;
 
