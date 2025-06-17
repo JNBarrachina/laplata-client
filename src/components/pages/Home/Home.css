@@ -9,7 +9,7 @@
 
   padding: 6rem;
 
-  background-image: url("../../../assets/homebackground.jpg");
+  background-image: url("/homebackground.jpg");
   background-size: cover;
   background-position: center;
 }

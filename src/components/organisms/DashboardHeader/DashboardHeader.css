@@ -3,8 +3,6 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-
-  width: fit-content;
   height: 100vh;
 
   padding: 1rem;
@@ -43,8 +41,6 @@
 }
 
 .linkText {
-  display: none;
-
   font-size: 0.8rem;
   color: white !important;
 }
@@ -55,11 +51,6 @@
   background-color: #1a3c54;
 
   transform: scale(1.02);
-  transition: 1s;
-}
-
-.dashboardHeaderLink:hover .linkText {
-  display: block;
   transition: 1s;
 }
 

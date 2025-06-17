@@ -18,27 +18,15 @@ export const DashboardHeader = () => {
         <img src="/src/assets/laplata.png" alt="" className="dashboardLogo" />
         <nav className="dashboardNav">
           <Link to="/dashboard" className="dashboardHeaderLink">
-            <img
-              className="dashboardHeaderImg"
-              src="/src/assets/dashboard.svg"
-              alt=""
-            />
+            <img className="dashboardHeaderImg" src="/dashboard.svg" alt="" />
             <p className="linkText">Dashboard</p>
           </Link>
           <Link to="/userprofile" className="dashboardHeaderLink">
-            <img
-              className="dashboardHeaderImg"
-              src="/src/assets/useraccount.svg"
-              alt=""
-            />
+            <img className="dashboardHeaderImg" src="/useraccount.svg" alt="" />
             <p className="linkText">Profile</p>
           </Link>
           <button className="dashboardHeaderLink" onClick={openModal}>
-            <img
-              className="dashboardHeaderImg"
-              src="/src/assets/logout.svg"
-              alt=""
-            />
+            <img className="dashboardHeaderImg" src="/logout.svg" alt="" />
             <p className="linkText">Logout</p>
           </button>
         </nav>
